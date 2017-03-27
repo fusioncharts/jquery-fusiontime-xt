@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>jQuery FusionTime</title>
+
+</head>
+
+<body>
+	<div id="fusiontime-chart">Fusiontime chart will load here</div>
+</body>
+<script src='lib/fusioncharts.js'></script>
+<script src='lib/fusioncharts.timeseries.js'></script>
+<script src='lib/growth-analyser-es5.js'></script>
+<script src='lib/date-range-chooser-es5.js'></script>
+<script src='lib/standard-period-selector-es5.js'></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src='lib/jquery.fusiontime.js'></script>
+<script>
+	var dates = [],
+		sierra = [],
+		guinea = [],
+		liberia = [];
+
+	$.get('/examples/data/ebola.json', function(res) {
+				res.forEach(function(item) {
+					if (item.Country == "Guinea") {
+						guinea.push(item.value);
+					}
+					if (item.Country == "Liberia") {
+						liberia.push(item.value);
+					}
+					if (item.Country == "Sierra Leone") {
+						sierra.push(item.value);
+						dates.push(item.Date)
+					}
+				});
+
+				dates = dates.sort();
+
+				$('#fusiontime-chart').fusiontime({
+					width: 1200,
+					height: 600,
+					dataSource: {
+						chart: {
+							axes: [{
+								x: {},
+								y: {
+									name: {
+										label: {
+											text: 'Ebola Outbreak count'
+										}
+									}
+								}
+							}],
+							datasets: [{
+								"category": {
+									"dateformat": "%Y-%m-%e",
+									"data": dates
+								},
+								"dataset": [{
+									"series": [{
+										"plot": {
+											"type": "column"
+										},
+										"name": "Sierra Leone",
+										"data": sierra
+									},
+									{
+										"plot": {
+											"type": "column"
+										},
+										"name": "Guinea",
+										"data": guinea
+									}, {
+										"plot": {
+											"type": "column"
+										},
+										"name": "Liberia",
+										"data": liberia
+									}
+								]
+								}]
+							}],
+							"caption": [{
+								"title": {
+									"text": "Ebola Outbreak in West Africa",
+									"style": {
+										"font-size": "20px",
+										"fill": "#545454"
+									}
+								},
+								"subtitle": {
+									"text": "Outbreak Distribution",
+									"style": {
+										"font-size": "15px",
+										"font-weight": "Semibold",
+										"fill": "#7B7B7B"
+									}
+								}
+							}],
+							"legend": [{
+								layout: function(obj) {
+									return obj.block;
+								},
+								position: function(obj) {
+									return obj.right;
+								},
+								orientation: function(obj) {
+									return obj.vertical;
+								},
+								alignment: function(obj) {
+									return obj.top;
+								}
+							}],
+
+							"navigator": [{
+								hide: true
+							}]
+						}
+					}
+				});
+			});
+</script>
+
+</html>
