@@ -1,7 +1,6 @@
 (function($) {
 
 	$.fn.fusiontime = function(options) {
-
 		var chartConfig = $.extend({
 			type: "timeseries",
 			plottype: "line",

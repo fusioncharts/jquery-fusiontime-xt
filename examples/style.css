@@ -7090,3 +7090,54 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#demo1,
+#demo2,
+#demo3,
+#demo4,
+#demo5 {
+  width: 850px;
+  max-width: 850px;
+  height: 450px;
+  max-height: 450px;
+  min-height: 450px;
+  display: inline-block;
+}
+
+.examples:hover,
+.examples:focus
+.examples:active {
+  background-color: #efefef
+}
