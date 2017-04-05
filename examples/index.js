@@ -3,14 +3,14 @@ import tsData from './datarepo';
 const tsDataKeys = Object.keys(tsData);
 
 // Initialise the options
-let metaContent = '';
+let metaHTML = '';
 tsDataKeys.forEach(key => {
-  metaContent += `<span onclick="demoClickHandler('${key}')" class="list-group-item examples">
+  metaHTML += `<span onclick="demoClickHandler('${key}')" class="list-group-item examples">
     <h4>${tsData[key].metadata.name}</h4>
     <p>${tsData[key].metadata.name}</p>
   </span>`;
 });
-$("#metadata").html(metaContent);
+$("#metadata").html(metaHTML);
 
 // Define the click handler
 const tsDOM = $('#demo');
