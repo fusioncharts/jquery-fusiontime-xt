@@ -4,17 +4,15 @@ The FusionTime XT jQuery plugin allows you to use jQuery syntax to render and ma
 
 It helps you add interactive JavaScript charts to your web and mobile applications, combining the delight and comprehensiveness of the FusionCharts Suite XT with the easy-to-use jQuery syntax.
 
-<ul>
-  <li>Add a chart using just a single plugin method.</li>
-  <li> Add chart to any jquery selection</li>
-</ul>
+- Add a chart using just a single plugin method.
+- Add chart to any jquery selection
 
 ## QuickStart
 
 ### Step 1: Include jquery.fusiontime.js
 
 In your HTML, include `jquery.fusiontime.js` after all other scripts:
-```
+```javascript
 <script type="text/javascript" src="/path/to/fusioncharts.timeseries.js">
 <script type="text/javascript" src="/path/to/jquery.min.js">
 <script type="text/javascript" src="/path/to/jquery.fusiontime.js">&lt;/script&gt;
@@ -22,7 +20,7 @@ In your HTML, include `jquery.fusiontime.js` after all other scripts:
 
 ### Step 2: Give one unique id to your target HTML element
 
-```
+```html
 <div id="tschart"></div></code></pre>
 ```
 
@@ -30,7 +28,7 @@ In your HTML, include `jquery.fusiontime.js` after all other scripts:
 
 You need to pass height , width and dataSource to using fusiontime method. This method gives you easy way to pass details to your chart. Just call fusiontime with any jquery object.
 
-```
+```javascript
 $("#tschart").fusiontime({
   width: 1000,
   height: 8000,
