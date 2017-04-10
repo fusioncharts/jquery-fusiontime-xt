@@ -10,7 +10,7 @@ tsDataKeys.forEach(key => {
     <p>${tsData[key].metadata.name}</p>
   </span>`;
 });
-$("#metadata").html(metaHTML);
+$('#metadata').html(metaHTML);
 
 // Define the click handler
 const tsDOM = $('#demo');
@@ -18,7 +18,7 @@ window.demoClickHandler = key => {
   tsDOM.fusiontime({
     width: 850,
     height: 450,
-    dataSource: tsData[key].data
+    dataSource: tsData[key].data,
   });
 };
 
@@ -26,7 +26,7 @@ window.demoClickHandler = key => {
 tsDOM.fusiontime({
   width: 850,
   height: 450,
-  dataSource: tsData[tsDataKeys[0]].data
+  dataSource: tsData[tsDataKeys[0]].data,
 });
 
 // Code snippet
