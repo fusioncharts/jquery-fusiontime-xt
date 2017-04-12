@@ -14,12 +14,12 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'jquery.fusiontime.js',
+    filename: 'jquery-fusiontime-xt.js',
     library: 'jquery-fusiontime-xt',
     libraryTarget: 'umd',
   },
   externals: {
-    jquery: 'jQuery',
+    jquery: 'jquery',
   },
   module: moduleConfig,
   devtool: '#eval-source-map',
