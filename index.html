@@ -86,18 +86,20 @@
 &lt;script type="text/javascript" src="/path/to/jquery.fusiontime.js"&gt;&lt;/script&gt;</code></pre>
 
               <h4>Option B: Using commonJS</h4>
-              <pre><code class="language-javascript">var FusionTimeXt = require('jquery-fusiontime-xt');
+              <pre><code class="language-javascript">var FusiontimeXt = require('jquery-fusiontime-xt').default;
 
-FusionTimeXt.init(jQuery);</code></pre>
+FusiontimeXt(jQuery);</code></pre>
 
               <h4>Option C: Using commonJS ES6 style</h4>
-              <pre><code class="language-javascript">import * as FusionTimeXt from 'jquery-fusiontime-xt';
+              <pre><code class="language-javascript">import FusiontimeXt from 'jquery-fusiontime-xt';
 
-FusionTimeXt.init(jQuery);</code></pre>
+FusiontimeXt(jQuery);</code></pre>
 
               <h4>Option D: Using AMD</h4>
-              <pre><code class="language-javascript">define(['jquery-fusiontime-xt'], function (FusionTimeXt) {
-  FusionTimeXt.init(jQuery);
+              <pre><code class="language-javascript">define(['jquery-fusiontime-xt'], function (FusiontimeXt) {
+  FusiontimeXt = FusiontimeXt.default;
+
+  FusiontimeXt(jQuery);
 });</code></pre>
 
               <h3>Step 2: Give one unique id to your target HTML element</h3>

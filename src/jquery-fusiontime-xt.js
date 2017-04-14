@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/prefer-default-export
-export function init($) {
+export default function init($) {
   // eslint-disable-next-line no-param-reassign
   $.fn.fusiontime = function fusiontime(options) {
     let tsChart = null;
@@ -30,5 +29,5 @@ export function init($) {
 }
 
 if (typeof window === 'object' && (window.$ || window.jQuery)) {
-  init($);
+  init(window.jQuery);
 }
