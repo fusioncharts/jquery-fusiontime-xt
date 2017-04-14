@@ -1,9 +1,0 @@
-{
-  "env": {
-    "es6": false
-  },
-  "rules": {
-    "prefer-arrow-callback": 0,
-    "no-var": 0
-  }
-}

@@ -10,16 +10,13 @@ const moduleConfig = {
 };
 
 module.exports = {
-  entry: './src/jquery.fusiontime.js',
+  entry: './src/jquery-fusiontime-xt.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'jquery-fusiontime-xt.js',
-    library: 'jquery-fusiontime-xt',
+    library: 'FusiontimeXt',
     libraryTarget: 'umd',
-  },
-  externals: {
-    jquery: 'jquery',
   },
   module: moduleConfig,
   devtool: '#eval-source-map',

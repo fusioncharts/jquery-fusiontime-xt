@@ -1,9 +1,9 @@
-import $ from 'jquery';
-
-export default function factory() {
+// eslint-disable-next-line import/prefer-default-export
+export function init($) {
+  // eslint-disable-next-line no-param-reassign
   $.fn.fusiontime = function fusiontime(options) {
-    var tsChart = null;
-    var chartConfig = $.extend({
+    let tsChart = null;
+    const chartConfig = $.extend({
       type: 'timeseries',
       plottype: 'line',
       renderAt: this.get(0),
@@ -27,4 +27,8 @@ export default function factory() {
 
     return this;
   };
+}
+
+if (typeof window === 'object' && (window.$ || window.jQuery)) {
+  init($);
 }

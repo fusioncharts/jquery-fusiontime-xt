@@ -78,10 +78,27 @@
               <h2>QuickStart</h2>
 
               <h3>Step 1: Include jquery.fusiontime.js</h3>
+
+              <h4>Option A: Using script tag</h4>
               <p>In your HTML, include <code class="language-javascript">jquery.fusiontime.js</code> after all other scripts:</p>
-              <pre><code class="language-markup">&lt;script type="text/javascript" src="/path/to/fusioncharts.timeseries.js"&gt;
-&lt;script type="text/javascript" src="/path/to/jquery.min.js"&gt;
+              <pre><code class="language-markup">&lt;script type="text/javascript" src="/path/to/fusioncharts.timeseries.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/path/to/jquery.min.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="/path/to/jquery.fusiontime.js"&gt;&lt;/script&gt;</code></pre>
+
+              <h4>Option B: Using commonJS</h4>
+              <pre><code class="language-javascript">var FusionTimeXt = require('jquery-fusiontime-xt');
+
+FusionTimeXt.init(jQuery);</code></pre>
+
+              <h4>Option C: Using commonJS ES6 style</h4>
+              <pre><code class="language-javascript">import * as FusionTimeXt from 'jquery-fusiontime-xt';
+
+FusionTimeXt.init(jQuery);</code></pre>
+
+              <h4>Option D: Using AMD</h4>
+              <pre><code class="language-javascript">define(['jquery-fusiontime-xt'], function (FusionTimeXt) {
+  FusionTimeXt.init(jQuery);
+});</code></pre>
 
               <h3>Step 2: Give one unique id to your target HTML element</h3>
               <pre><code class="language-javascript">&lt;div id="tschart"&gt;&lt;/div&gt;</code></pre>
@@ -159,7 +176,6 @@ $("#tschart").fusiontime({
     <script src='examples/lib/growth-analyser-es5.js'></script>
     <script src='examples/lib/date-range-chooser-es5.js'></script>
     <script src='examples/lib/standard-period-selector-es5.js'></script>
-    <script src='examples/lib/jquery.fusiontime.js'></script>
 
     <script src="examples/datarepo/dist/index.js"></script>
     <script src="examples/build.js"></script>

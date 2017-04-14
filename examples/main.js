@@ -1,6 +1,8 @@
 import Prism from 'prismjs';
+import * as FusiontimeXt from '../dist/jquery-fusiontime-xt';
 import tsData from './datarepo';
 
+FusiontimeXt.init($);
 const tsDataKeys = Object.keys(tsData);
 
 // Initialise the options

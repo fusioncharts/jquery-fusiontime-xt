@@ -2,10 +2,12 @@
   "name": "jquery-fusiontime-xt",
   "version": "0.0.1",
   "description": "The FusionTime XT jQuery plugin allows you to use jQuery syntax to render and manipulate your charts and graphs seamlessly across all browsers and devices.",
-  "main": "src/jquery-fusiontime-xt.js",
+  "main": "dist/jquery-fusiontime-xt.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development gulp serve",
-    "build": "cross-env NODE_ENV=production gulp"
+    "build:examples": "cross-env NODE_ENV=production gulp build:examples",
+    "build:source": "cross-env NODE_ENV=production gulp build:source",
+    "build": "npm run build:source && npm run build:examples"
   },
   "repository": {
     "type": "git",

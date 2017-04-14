@@ -9,13 +9,39 @@ It helps you add interactive JavaScript charts to your web and mobile applicatio
 
 ## QuickStart
 
-### Step 1: Include jquery.fusiontime.js
+### Step 1: Include jquery-fusiontime-xt.js
 
-In your HTML, include `jquery.fusiontime.js` after all other scripts:
+#### Option A: Using script tag
+
+In your HTML, include `jquery-fusiontime-xt.js` after all other scripts:
 ```javascript
-<script type="text/javascript" src="/path/to/fusioncharts.timeseries.js">
-<script type="text/javascript" src="/path/to/jquery.min.js">
-<script type="text/javascript" src="/path/to/jquery.fusiontime.js">&lt;/script&gt;
+<script type="text/javascript" src="/path/to/fusioncharts.timeseries.js"></script>
+<script type="text/javascript" src="/path/to/jquery.min.js"></script>
+<script type="text/javascript" src="/path/to/jquery-fusiontime-xt.js"></script>
+```
+
+#### Option B: Using commonJS
+
+```javascript
+var FusionTimeXt = require('jquery-fusiontime-xt');
+
+FusionTimeXt.init(jQuery);
+```
+
+#### Option C: Using commonJS ES6 style
+
+```javascript
+import * as FusionTimeXt from 'jquery-fusiontime-xt';
+
+FusionTimeXt.init(jQuery);
+```
+
+#### Option D: Using AMD
+
+```javascript
+define(['jquery-fusiontime-xt'], function (FusionTimeXt) {
+  FusionTimeXt.init(jQuery);
+});
 ```
 
 ### Step 2: Give one unique id to your target HTML element
